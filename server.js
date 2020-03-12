@@ -1,6 +1,7 @@
 const express = require('express');
 const helmet = require('helmet');
 const morgan = require('morgan')
+const cors = require("cors");
 
 const server = express();
 const showsRouter = require('./data/routers/showsRouter.js');
@@ -8,9 +9,9 @@ const charactersRouter = require('./data/routers/charactersRouter.js')
 server.use(helmet());
 server.use(morgan("dev"));
 server.use(express.json());
-
+server.use(cors());
 server.use('/api/shows', showsRouter);
-// server.use('/api/characters', charactersRouter);
+server.use('/api/characters', charactersRouter);
 
 
 server.get('/', (req, res) => {

@@ -3,10 +3,10 @@ const router = require("express").Router();
 // const express = require('express')
 // const router = express.Router();
 
-const cors = require("cors");
+
 const showsDB = require("../helpers/showsModel");
 
-router.use(cors());
+
 // router.use(express.json());
 
 // routes
